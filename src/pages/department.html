@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+        <script src="js/departmentPage.js"></script>
+
+
+        <title>Tatwa</title>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+          body{
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            font-family: 'Noto Serif', serif;
+            max-width: 1200px;
+          }
+          p, h1, h2, h3, a, ul{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            color: #222;
+          }
+          /* nav & footer styles */
+          nav{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            text-transform: uppercase;
+          }
+          nav ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+          }
+          nav li{
+            list-style-type: none;
+            margin-left: 20px;
+          }
+          nav h1{
+            font-size: 3em;
+          }
+          nav p, nav a{
+            color: #777;
+            font-weight: 300;
+          }
+          footer{
+            color: #777;
+            text-align: center;
+            margin: 80px auto 20px;
+          }
+          h2{
+            margin-bottom: 40px;
+          }
+          h3{
+            text-transform: capitalize;
+            margin-bottom: 8px;
+          }
+          .content{
+            margin-left: 20px;
+          }
+          /* index styles */
+          /* details styles */
+          /* create styles */
+          .create-blog form{
+            max-width: 400px;
+            margin: 0 auto;
+          }
+          .create-blog input,
+          .create-blog textarea{
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+          }
+          .create-blog label{
+            display: block;
+            margin-top: 24px;
+          }
+          textarea{
+            height: 120px;
+          }
+          .create-blog button{
+            margin-top: 20px;
+            background: crimson;
+            color: white;
+            padding: 6px;
+            border: 0;
+            font-size: 1.2em;
+            cursor: pointer;
+          }
+
+
+          th {
+  border-bottom: #868ca0;
+  border-width: 1px;
+  border-bottom-style: solid;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: "Segoe UI Regular", SegoeUI, "Segoe UI";
+  padding: 9px;
+  color: grey;
+}
+td {
+  padding: 6px;
+  border-bottom: #868ca036;
+  border-width: 1px;
+  border-bottom-style: solid;
+  text-align: left;
+  font-size: 0.8rem;
+  font-family: "Segoe UI Regular", SegoeUI, "Segoe UI";
+  color: rgb(4, 89, 153);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 50px;
+}
+tbody > tr > *:nth-last-child(2) ~ * {
+  width: 50%;
+}
+tbody > tr > *:nth-last-child(3) ~ * {
+  width: 33.3%;
+}
+tbody > tr > *:nth-last-child(4) ~ * {
+  width: 20%;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+        </style>
+      </head>
+<body >
+    <nav>
+        <div class="site-title">
+          <a href="/"><h1>Tatwa</h1></a>
+          <p>Make Rest API for Tatwa</p>
+        </div>
+        <ul>
+          <li><a href="/">Employees</a></li>
+          <li><a href="/project">Projects</a></li>
+          <li><a href="/department">Departments</a></li>
+        </ul>
+      </nav>
+
+      
+    <h1>Department</h1>
+
+    <button class="open-button" onclick="openForm()">Add Department</button>
+
+
+      <table id="tableId">
+        
+      </table>
+
+
+    <div class="form-popup" id="myForm">
+      <form  class="form-container">
+        <h1>Add a Department</h1>
+    
+        <label for="email"><b>Department Name</b></label>
+        <input type="text" placeholder="Department Name " id="deptName" name="email" required>
+    
+        <label for="psw"><b>Department Description</b></label>
+        <input type="text" placeholder="Department Description" id="deptDesc" name="name" required>
+    
+        <button type="submit" class="btn" onclick="addDept()">Create</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+
+</body>
+</html>
